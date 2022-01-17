@@ -44,7 +44,7 @@ namespace SiteHotel.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ApartamentoId")
+                    b.Property<int>("ApartamentoId")
                         .HasColumnType("int");
 
                     b.Property<byte[]>("Imagem")
@@ -70,6 +70,9 @@ namespace SiteHotel.Migrations
                     b.Property<int?>("ApartamentoId")
                         .HasColumnType("int");
 
+                    b.Property<int>("ApartmentoId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DataFinal")
                         .HasColumnType("datetime2");
 
@@ -82,7 +85,7 @@ namespace SiteHotel.Migrations
                     b.Property<int>("DiasDuracao")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PessoaId")
+                    b.Property<int>("PessoaId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Valor")
@@ -173,8 +176,8 @@ namespace SiteHotel.Migrations
                     b.Property<string>("EstadoCivil")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte>("Foto")
-                        .HasColumnType("tinyint");
+                    b.Property<byte[]>("Foto")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<DateTime>("Nascimento")
                         .HasColumnType("datetime2");
@@ -195,7 +198,8 @@ namespace SiteHotel.Migrations
                     b.HasOne("SiteHotel.Models.Hotel.Entities.Apartamento", "Apartamento")
                         .WithMany("Imagens")
                         .HasForeignKey("ApartamentoId")
-                        .OnDelete(DeleteBehavior.ClientCascade);
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
 
                     b.Navigation("Apartamento");
                 });
@@ -210,7 +214,8 @@ namespace SiteHotel.Migrations
                     b.HasOne("SiteHotel.Models.Usuario.Entities.Pessoa", "Pessoa")
                         .WithMany("Reserva")
                         .HasForeignKey("PessoaId")
-                        .OnDelete(DeleteBehavior.ClientCascade);
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
 
                     b.Navigation("Apartamento");
 

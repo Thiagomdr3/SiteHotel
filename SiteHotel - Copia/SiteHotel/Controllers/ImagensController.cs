@@ -22,7 +22,8 @@ namespace SiteHotel.Controllers
         // GET: Imagens
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Imagens.ToListAsync());
+            var context = _context.Imagens.Include(i => i.Apartamento);
+            return View(await context.ToListAsync());
         }
 
         // GET: Imagens/Details/5
@@ -34,6 +35,7 @@ namespace SiteHotel.Controllers
             }
 
             var imagens = await _context.Imagens
+                .Include(i => i.Apartamento)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (imagens == null)
             {
@@ -46,6 +48,7 @@ namespace SiteHotel.Controllers
         // GET: Imagens/Create
         public IActionResult Create()
         {
+            ViewData["ApartamentoId"] = new SelectList(_context.Apartamento, "Id", "Id");
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace SiteHotel.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Imagem,NomeImagens")] Imagens imagens)
+        public async Task<IActionResult> Create([Bind("Id,Imagem,NomeImagens,ApartamentoId")] Imagens imagens)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +65,7 @@ namespace SiteHotel.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["ApartamentoId"] = new SelectList(_context.Apartamento, "Id", "Id", imagens.ApartamentoId);
             return View(imagens);
         }
 
@@ -78,6 +82,7 @@ namespace SiteHotel.Controllers
             {
                 return NotFound();
             }
+            ViewData["ApartamentoId"] = new SelectList(_context.Apartamento, "Id", "Id", imagens.ApartamentoId);
             return View(imagens);
         }
 
@@ -86,7 +91,7 @@ namespace SiteHotel.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Imagem,NomeImagens")] Imagens imagens)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Imagem,NomeImagens,ApartamentoId")] Imagens imagens)
         {
             if (id != imagens.Id)
             {
@@ -113,6 +118,7 @@ namespace SiteHotel.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["ApartamentoId"] = new SelectList(_context.Apartamento, "Id", "Id", imagens.ApartamentoId);
             return View(imagens);
         }
 
@@ -125,6 +131,7 @@ namespace SiteHotel.Controllers
             }
 
             var imagens = await _context.Imagens
+                .Include(i => i.Apartamento)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (imagens == null)
             {

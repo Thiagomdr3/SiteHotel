@@ -12,7 +12,7 @@ namespace SiteHotel.Models.Usuario.Entities
         [Key]
         public int Id { get; set; }
         public string Nome { get; set; }
-        public byte Foto { get; set; }
+        public byte[] Foto { get; set; }
         public string Sexo { get; set; }
         [Display(Name ="Data de nascimento")]
         public DateTime Nascimento { get; set; }

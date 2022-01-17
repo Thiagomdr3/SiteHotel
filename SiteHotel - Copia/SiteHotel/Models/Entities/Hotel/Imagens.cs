@@ -12,6 +12,7 @@ namespace SiteHotel.Models.Hotel.Entities
         public byte[] Imagem { get; set; }
         [Display(Name ="Titulo")]
         public string NomeImagens { get; set; }
+        public int ApartamentoId { get; set; }
         public virtual Apartamento Apartamento { get; set; }
     }
 }

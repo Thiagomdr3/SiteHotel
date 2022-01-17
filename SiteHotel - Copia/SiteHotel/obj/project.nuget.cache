@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "1mLEz7wmXE8e9pq7ja3P0842jwRPat/wb0CpkoLDfyeYj/YiPGwMlnBalwlggz0b7/Co40wbFoy986SbqM3rXg==",
+  "dgSpecHash": "Fd4f5/fVMKKkjX4htkyq3qafgohhziATgoAkxmz4DEJ7+Q1dM09CNr1TAFXW4lX2xo86MwY1H7qoPxyPJkDQGw==",
   "success": true,
-  "projectFilePath": "F:\\Thiago\\Programação\\Projetos\\SiteHotel2\\SiteHotel - Copia\\SiteHotel\\SiteHotel.csproj",
+  "projectFilePath": "F:\\Thiago\\Programação\\Projetos\\SiteHotel2\\Nova pasta\\SiteHotel - Copia\\SiteHotel\\SiteHotel.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thiag\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
+    "C:\\Users\\thiag\\.nuget\\packages\\documentformat.openxml\\2.15.0\\documentformat.openxml.2.15.0.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
@@ -109,6 +110,7 @@
     "C:\\Users\\thiag\\.nuget\\packages\\system.io.compression.zipfile\\4.3.0\\system.io.compression.zipfile.4.3.0.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\system.io.filesystem\\4.3.0\\system.io.filesystem.4.3.0.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\thiag\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",

@@ -18,6 +18,8 @@ namespace SiteHotel.Models.Hotel.Entities
         [Display(Name = "Duração Estadia")]
         public int DiasDuracao { get; set; }
         public decimal Valor { get; set; }
+        public int ApartmentoId { get; set; }
+        public int PessoaId { get; set; }
 
         public virtual Pessoa Pessoa { get; set; }
         public virtual Apartamento Apartamento { get; set; }
